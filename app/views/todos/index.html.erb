@@ -1,0 +1,23 @@
+<h1>Todos Index</h1>
+<!-- <p>Find me in app/views/todos/index.html.erb</p> -->
+<% @todos.each do |todo| %>
+<%= todo %>
+<% end %>
+<br>
+
+
+<%= form_tag(todos_path) do %>
+     <p>
+      <%= label_tag(:task) %>
+      <%= text_field_tag(:task, nil, autofocus: true) %>
+    </p>
+     <%= submit_tag "Add"%>
+<% end %>
+
+<%= link_to "Clear All", todos_path, method: :delete %>
+
+
+
+
+ 
+
